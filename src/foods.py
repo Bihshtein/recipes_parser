@@ -16,4 +16,4 @@ class Foods:
             if word_index < len(ingredient) - 1:
                 query += ' & '
 
-        return self.food_df.query(query).iloc[0]['description']
+        return self.food_df.query(query).iloc[0]
