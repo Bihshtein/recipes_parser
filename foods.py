@@ -6,14 +6,8 @@ class Foods:
 
     def __init__(self, folder):
 
-        food_nutrient_path = os.path.join(folder, 'food_nutrient.csv')
-        self.food_nutrient_df = pd.read_csv(food_nutrient_path)
-
-        food_path= os.path.join(folder, 'food.csv')
-        self.food_df = pd.read_csv(food_path).dropna(subset=['description'])
-        nutrient_path= os.path.join(folder, 'nutrient.csv')
-        self.nutrient_df = pd.read_csv(nutrient_path)
-        #nutrient_df.query('name=="Sodium, Na"')
+        self.food_df = pd.read_csv(os.path.join(folder, 'food.csv'))\
+            .dropna(subset=['description'])
 
     def get_food_item(self, ingredient: list[str]):
         query = ''
